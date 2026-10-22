@@ -1,22 +1,25 @@
-### Staff SRE Platform
+cat > README.md <<'EOF'
+# Staff SRE Platform
 
-1. Install k3d
-   winget install --id k3d-io.k3d --exact
-2. Cluster Config
-```
-apiVersion: k3d.io/v1alpha5
-kind: Simple
-metadata:
-  name: staff-sre
-servers: 1
-agents: 2
-options:
-  k3s:
-    extraArgs:
-      - arg: --disable=traefik
-        nodeFilters:
-          - server:*
-```
-k3d cluster create --config k3d-cluster.yaml
-k3d version
-3. 
+A local, GitOps-managed SRE platform for a B2B SaaS application.
+
+## Status
+
+- [ ] Argo CD GitOps bootstrap
+- [ ] Platform security baseline
+- [ ] Metrics, logs, and traces
+- [ ] Sample API
+- [ ] SLI/SLO and alerting
+- [ ] Temporal operational workflow
+- [ ] AI SRE root-cause analysis
+- [ ] Incident simulation and recovery tests
+- [ ] Fresh-clone bootstrap validation
+
+## Architecture
+
+See `docs/architecture.md`.
+
+## Security
+
+Never commit credentials, tokens, private keys, or plaintext production secrets.
+EOF
